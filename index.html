@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B INFORMATIQUE - Dépannage à Neuvillalais</title>
+    <meta name="description" content="Assistance informatique à domicile à Neuvillalais. Agrément SAP : -50% de crédit d'impôt immédiat.">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1A2B4C',
+                        brandCyan: '#00D2FF',
+                        grayBg: '#F8FAFC',
+                        grayText: '#475569',
+                        uiBorder: '#E2E8F0',
+                        sapGold: '#D97706',
+                        sapBg: '#FFFBEB',
+                        sapBorder: '#FDE68A',
+                        sapText: '#92400E',
+                        sapSubtext: '#B45309',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .utility-card { background: white; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#1A2B4C] font-sans antialiased">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white h-[70px] border-b-2 border-[#00D2FF] flex shadow-sm">
+        <div class="max-w-7xl w-full mx-auto px-6 md:px-10 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo B Informatique" class="h-10 md:h-12 w-auto object-contain">
+                <span class="font-extrabold text-xl md:text-2xl uppercase tracking-tighter">INFORMATIQUE</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-bold text-navy hover:text-[#00D2FF]">
+                <a href="tel:0600000000" class="text-lg">06 00 00 00 00</a>
+                <a href="#contact" class="bg-[#00D2FF] text-[#1A2B4C] px-5 py-2.5 rounded-md font-bold text-sm hover:brightness-105 active:scale-95 transition-all">Prendre RDV</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <!-- HERO -->
+        <section class="utility-card bg-gradient-to-br from-[#1A2B4C] to-[#0F172A] text-white border-none flex flex-col justify-center gap-2 min-h-[300px]">
+            <span class="bg-[#00D2FF]/20 text-[#00D2FF] px-2 py-1 rounded-sm text-[11px] font-extrabold uppercase tracking-widest self-start mb-2">DÉPANNAGE À DOMICILE</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-2">Votre dépanneur de confiance à Neuvillalais.</h1>
+            <p class="text-white/90 text-lg leading-snug mb-5">L'informatique simple, chez vous. Assistance pour seniors et télétravailleurs en Sarthe.</p>
+            <a href="#services" class="bg-[#00D2FF] text-[#1A2B4C] px-6 py-3 rounded-md font-bold text-sm self-start hover:brightness-105 transition-all text-center">Voir nos services</a>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="utility-card md:row-span-2 flex flex-col">
+            <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-4">Services & Tarifs (SAP)</h3>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
+                    <div><span class="font-bold">Diagnostic Complet</span><p class="text-xs text-[#475569]">Recherche de panne & devis</p></div>
+                    <div class="text-right"><span class="text-[#475569] line-through text-xs">35€</span><span class="block text-[#00D2FF] font-extrabold text-xl">17,50€*</span></div>
+                </div>
+                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
+                    <div><span class="font-bold">Main d'œuvre (1h)</span><p class="text-xs text-[#475569]">Dépannage logiciel ou matériel</p></div>
+                    <div class="text-right"><span class="text-[#475569] line-through text-xs">65€</span><span class="block text-[#00D2FF] font-extrabold text-xl">32,50€*</span></div>
+                </div>
+                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
+                    <div><span class="font-bold">Pack Optimisation</span><p class="text-xs text-[#475569]">Nettoyage complet PC lent</p></div>
+                    <div class="text-right"><span class="text-[#475569] line-through text-xs">85€</span><span class="block text-[#00D2FF] font-extrabold text-xl">42,50€*</span></div>
+                </div>
+                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
+                    <div><span class="font-bold">Réinstallation Windows</span><p class="text-xs text-[#475569]">Sauvegarde & système neuf</p></div>
+                    <div class="text-right"><span class="text-[#475569] line-through text-xs">140€</span><span class="block text-[#00D2FF] font-extrabold text-xl">70,00€*</span></div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div><span class="font-bold">Aide Administrative</span><p class="text-xs text-[#475569]">Formation / Démarches internet</p></div>
+                    <div class="text-right"><span class="text-[#475569] line-through text-xs">60€</span><span class="block text-[#00D2FF] font-extrabold text-xl">30,00€*</span></div>
+                </div>
+            </div>
+            <p class="text-[10px] text-[#475569] mt-6 italic">* Prix après avance immédiate du crédit d'impôt SAP.</p>
+        </section>
+
+        <!-- SAP BOX -->
+        <section id="sap" class="utility-card bg-[#FFFBEB] border-[#FDE68A] flex flex-row items-center gap-5">
+            <div class="bg-[#D97706] text-white w-16 h-16 md:w-20 md:h-20 rounded-full flex-shrink-0 flex items-center justify-center text-center font-extrabold text-[10px] md:text-sm leading-none">SAP<br>50%</div>
+            <div>
+                <h2 class="text-[#92400E] font-bold text-lg mb-1">Service à la Personne</h2>
+                <p class="text-[#B45309] text-sm leading-tight">Payez seulement la moitié ! Votre crédit d'impôt est déduit immédiatement de la facture.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT & ZONE -->
+        <section id="contact" class="utility-card flex flex-col md:flex-row gap-6">
+            <form action="https://formspree.io/f/mqewpgbj" method="POST" class="flex-1 space-y-4">
+                <div class="space-y-1">
+                    <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Nom Complet</label>
+                    <input type="text" name="nom" required placeholder="M. Jean Dupont" class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#00D2FF]">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Téléphone</label>
+                    <input type="tel" name="telephone" required placeholder="06..." class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#00D2FF]">
+                </div>
+                <input type="hidden" name="_subject" value="Nouveau contact depuis le site B Informatique !">
+                
+                <button type="submit" class="w-full bg-[#00D2FF] text-[#1A2B4C] font-bold py-3 rounded-md text-sm hover:brightness-105 transition-all">Envoyer la demande</button>
+            </form>
+            
+            <div class="flex-1 md:border-l md:pl-6 border-[#E2E8F0]">
+                <h4 class="font-bold text-sm text-[#1A2B4C] uppercase mb-2">Zone d'intervention</h4>
+                <p class="text-xs text-[#475569] leading-relaxed">Neuvillalais (72240), Conlie, Sillé-le-Guillaume, Tennie, Bernay-en-Champagne et communes voisines.<br><br><strong>Déplacement Gratuit</strong> (10km).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#1A2B4C] text-white/50 text-[10px] py-4 h-[50px] flex items-center">
+        <div class="max-w-7xl w-full mx-auto px-10 flex flex-col md:flex-row justify-between items-center">
+            <span>B Informatique © 2026 — Siret: 123 456 789 00012</span>
+            <span class="hidden md:block">Agrément SAP N° SAP123456789</span>
+        </div>
+    </footer>
+
+</body>
+</html>
