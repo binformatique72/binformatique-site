@@ -7,10 +7,8 @@
     <meta name="description" content="Assistance informatique à domicile à Neuvillalais. Agrément SAP : -50% de crédit d'impôt immédiat.">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">    
-    <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -44,7 +42,6 @@
 </head>
 <body class="bg-[#F8FAFC] text-[#1A2B4C] font-sans antialiased">
 
-    <!-- HEADER -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white h-[70px] border-b-2 border-[#00D2FF] flex shadow-sm">
         <div class="max-w-7xl w-full mx-auto px-6 md:px-10 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -60,7 +57,6 @@
 
     <main class="max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
         
-        <!-- HERO -->
         <section class="utility-card bg-gradient-to-br from-[#1A2B4C] to-[#0F172A] text-white border-none flex flex-col justify-center gap-2 min-h-[300px]">
             <span class="bg-[#00D2FF]/20 text-[#00D2FF] px-2 py-1 rounded-sm text-[11px] font-extrabold uppercase tracking-widest self-start mb-2">DÉPANNAGE À DOMICILE</span>
             <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-2">Votre dépanneur de confiance à Neuvillalais.</h1>
@@ -68,8 +64,7 @@
             <a href="#services" class="bg-[#00D2FF] text-[#1A2B4C] px-6 py-3 rounded-md font-bold text-sm self-start hover:brightness-105 transition-all text-center">Voir nos services</a>
         </section>
 
-        <!-- SERVICES -->
-        <section id="services" class="utility-card md:row-span-2 flex flex-col">
+        <section id="services" class="utility-card md:row-span-3 flex flex-col">
             <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-4">Services & Tarifs (SAP)</h3>
             <div class="space-y-4">
                 <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
@@ -96,7 +91,6 @@
             <p class="text-[10px] text-[#475569] mt-6 italic">* Prix après avance immédiate du crédit d'impôt SAP.</p>
         </section>
 
-        <!-- SAP BOX -->
         <section id="sap" class="utility-card bg-[#FFFBEB] border-[#FDE68A] flex flex-row items-center gap-5">
             <div class="bg-[#D97706] text-white w-16 h-16 md:w-20 md:h-20 rounded-full flex-shrink-0 flex items-center justify-center text-center font-extrabold text-[10px] md:text-sm leading-none">SAP<br>50%</div>
             <div>
@@ -105,8 +99,29 @@
             </div>
         </section>
 
-        <!-- CONTACT & ZONE -->
-        <section id="contact" class="utility-card flex flex-col md:flex-row gap-6">
+        <section class="utility-card border-l-4 border-l-[#00D2FF]">
+            <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-3">Horaires & Disponibilités</h3>
+            <div class="flex flex-col gap-2">
+                <div class="flex justify-between items-center text-sm">
+                    <span class="font-semibold">Lundi au Vendredi</span>
+                    <span class="text-navy font-bold">08:00 – 12:00 / 13:30 – 16:30</span>
+                </div>
+                <div class="flex justify-between items-center text-sm text-[#475569]">
+                    <span>Week-end & Jours fériés</span>
+                    <span class="text-red-500 font-bold uppercase text-[10px]">Fermé</span>
+                </div>
+                <div class="mt-3 pt-3 border-t border-[#E2E8F0]">
+                    <p class="text-navy font-bold text-sm italic flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#00D2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Intervention sur rendez-vous uniquement.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="utility-card flex flex-col md:flex-row gap-6 md:col-span-2">
             <form action="https://formspree.io/f/mqewpgbj" method="POST" class="flex-1 space-y-4">
                 <div class="space-y-1">
                     <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Nom Complet</label>
@@ -128,10 +143,10 @@
         </section>
     </main>
 
-    <footer class="bg-[#1A2B4C] text-white/50 text-[10px] py-4 h-[50px] flex items-center">
-        <div class="max-w-7xl w-full mx-auto px-10 flex flex-col md:flex-row justify-between items-center">
+    <footer class="bg-[#1A2B4C] text-white/50 text-[10px] py-4 h-auto md:h-[50px] flex items-center">
+        <div class="max-w-7xl w-full mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
             <span>B Informatique © 2026 — Siret: 123 456 789 00012</span>
-            <span class="hidden md:block">Agrément SAP N° SAP123456789</span>
+            <span class="md:block">Agrément SAP N° SAP123456789</span>
         </div>
     </footer>
 
