@@ -8,7 +8,6 @@
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -18,18 +17,8 @@
                     colors: {
                         navy: '#1A2B4C',
                         brandCyan: '#00D2FF',
-                        grayBg: '#F8FAFC',
-                        grayText: '#475569',
-                        uiBorder: '#E2E8F0',
-                        sapGold: '#D97706',
-                        sapBg: '#FFFBEB',
-                        sapBorder: '#FDE68A',
-                        sapText: '#92400E',
-                        sapSubtext: '#B45309',
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
@@ -38,6 +27,7 @@
     <style>
         html { scroll-behavior: smooth; }
         .utility-card { background: white; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        #result { display: none; }
     </style>
 </head>
 <body class="bg-[#F8FAFC] text-[#1A2B4C] font-sans antialiased">
@@ -48,9 +38,9 @@
                 <img src="logo.png" alt="Logo B Informatique" class="h-10 md:h-12 w-auto object-contain">
                 <span class="font-extrabold text-xl md:text-2xl uppercase tracking-tighter">INFORMATIQUE</span>
             </div>
-            <div class="hidden md:flex items-center gap-8 font-bold text-navy hover:text-[#00D2FF]">
-                <a href="tel:0600000000" class="text-lg">06 00 00 00 00</a>
-                <a href="#contact" class="bg-[#00D2FF] text-[#1A2B4C] px-5 py-2.5 rounded-md font-bold text-sm hover:brightness-105 active:scale-95 transition-all">Prendre RDV</a>
+            <div class="hidden md:flex items-center gap-8 font-bold text-navy">
+                <a href="tel:0600000000" class="text-lg hover:text-[#00D2FF]">06 00 00 00 00</a>
+                <a href="#contact" class="bg-[#00D2FF] text-[#1A2B4C] px-5 py-2.5 rounded-md text-sm hover:brightness-105 active:scale-95 transition-all">Prendre RDV</a>
             </div>
         </div>
     </header>
@@ -107,7 +97,7 @@
                     <span class="text-navy font-bold">08:00 – 12:00 / 13:30 – 16:30</span>
                 </div>
                 <div class="flex justify-between items-center text-sm text-[#475569]">
-                    <span>Week-end & Jours fériés</span>
+                    <span>Week-end & Fériés</span>
                     <span class="text-red-500 font-bold uppercase text-[10px]">Fermé</span>
                 </div>
                 <div class="mt-3 pt-3 border-t border-[#E2E8F0]">
@@ -122,33 +112,102 @@
         </section>
 
         <section id="contact" class="utility-card flex flex-col md:flex-row gap-6 md:col-span-2">
-            <form action="https://formspree.io/f/mqewpgbj" method="POST" class="flex-1 space-y-4">
-                <div class="space-y-1">
-                    <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Nom Complet</label>
-                    <input type="text" name="nom" required placeholder="M. Jean Dupont" class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#00D2FF]">
-                </div>
-                <div class="space-y-1">
-                    <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Téléphone</label>
-                    <input type="tel" name="telephone" required placeholder="06..." class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#00D2FF]">
-                </div>
-                <input type="hidden" name="_subject" value="Nouveau contact depuis le site B Informatique !">
+            <div class="flex-1">
+                <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-4">Demander un dépannage</h3>
                 
-                <button type="submit" class="w-full bg-[#00D2FF] text-[#1A2B4C] font-bold py-3 rounded-md text-sm hover:brightness-105 transition-all">Envoyer la demande</button>
-            </form>
-            
+                <form id="form" class="space-y-4">
+                    <input type="hidden" name="access_key" value="4a264f4e-a950-4ca8-ad27-2419906161bb">
+                    <input type="hidden" name="subject" value="Nouvelle demande client - B Informatique">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Nom Complet</label>
+                            <input type="text" name="name" required placeholder="Ex: Jean Dupont" class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-[#00D2FF] outline-none">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Téléphone</label>
+                            <input type="tel" name="phone" required placeholder="06 00 00 00 00" class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-[#00D2FF] outline-none">
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Votre problème / besoin</label>
+                        <textarea name="message" rows="3" required placeholder="Ex: Mon PC est très lent au démarrage..." class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-[#00D2FF] outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" id="btn-submit" class="w-full bg-[#00D2FF] text-[#1A2B4C] font-bold py-3 rounded-md text-sm hover:brightness-105 transition-all">
+                        Envoyer ma demande
+                    </button>
+                    
+                    <div id="result" class="text-center p-3 rounded text-sm font-bold mt-2"></div>
+                </form>
+            </div>
+
             <div class="flex-1 md:border-l md:pl-6 border-[#E2E8F0]">
-                <h4 class="font-bold text-sm text-[#1A2B4C] uppercase mb-2">Zone d'intervention</h4>
-                <p class="text-xs text-[#475569] leading-relaxed">Neuvillalais (72240), Conlie, Sillé-le-Guillaume, Tennie, Bernay-en-Champagne et communes voisines.<br><br><strong>Déplacement Gratuit</strong> (10km).</p>
+                <h4 class="font-bold text-sm text-[#1A2B4C] uppercase mb-2 text-[10px]">Zone d'intervention</h4>
+                <p class="text-xs text-[#475569] leading-relaxed italic">Neuvillalais (72240) et communes voisines (Conlie, Tennie, Sillé...).</p>
+                <div class="mt-8 p-4 bg-blue-50/50 rounded-lg border border-dashed border-blue-200">
+                    <p class="text-[11px] text-navy font-medium leading-snug">
+                        Une réponse vous sera apportée par téléphone dans les plus brefs délais pour convenir d'un rendez-vous.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#1A2B4C] text-white/50 text-[10px] py-4 h-auto md:h-[50px] flex items-center">
-        <div class="max-w-7xl w-full mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
-            <span>B Informatique © 2026 — Siret: 123 456 789 00012</span>
-            <span class="md:block">Agrément SAP N° SAP123456789</span>
+    <footer class="bg-[#1A2B4C] text-white/50 text-[10px] py-6 text-center">
+        <div class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <span>B Informatique © 2026 — Siret: En cours d'immatriculation</span>
+            <span>Agrément SAP N° En cours d'attribution</span>
         </div>
     </footer>
+
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+        const btnSubmit = document.getElementById('btn-submit');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.style.display = "block";
+            result.innerHTML = "Envoi en cours...";
+            result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-blue-50 text-blue-600";
+            btnSubmit.disabled = true;
+            btnSubmit.style.opacity = "0.5";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-green-50 text-green-600 border border-green-200";
+                    result.innerHTML = "✓ Message envoyé ! Je vous recontacte très bientôt.";
+                    form.reset();
+                } else {
+                    result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-red-50 text-red-600 border border-red-200";
+                    result.innerHTML = "Erreur lors de l'envoi. Veuillez réessayer.";
+                }
+            })
+            .catch(error => {
+                result.innerHTML = "Une erreur est survenue.";
+            })
+            .then(function() {
+                setTimeout(() => {
+                    result.style.display = "none";
+                    btnSubmit.disabled = false;
+                    btnSubmit.style.opacity = "1";
+                }, 6000);
+            });
+        });
+    </script>
 
 </body>
 </html>
