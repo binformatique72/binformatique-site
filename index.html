@@ -3,101 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B INFORMATIQUE - Dépannage à Neuvillalais</title>
-    <meta name="description" content="Assistance informatique à domicile à Neuvillalais. Dépannage, optimisation, réinstallation et aide administrative.">
+    <title>B Informatique – Dépannage informatique à domicile à Neuvillalais (Sarthe)</title>
+    <meta name="description" content="Dépannage informatique à domicile à Neuvillalais, Conlie, Sillé-le-Guillaume et alentours. PC lent, virus, réinstallation Windows, aide aux démarches internet. Tarifs clairs, sur rendez-vous. 07 80 17 95 79.">
+    <link rel="canonical" href="https://binformatique.fr/">
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">  
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="B Informatique – Dépannage informatique à domicile en Sarthe">
+    <meta property="og:description" content="Votre dépanneur informatique à Neuvillalais et alentours. Tarifs clairs, sur rendez-vous.">
+    <meta property="og:url" content="https://binformatique.fr/">
+    <meta property="og:image" content="https://binformatique.fr/logo.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#1A2B4C',
-                        brandCyan: '#00D2FF',
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
-                }
-            }
+            theme: { extend: {
+                colors: { navy: '#1A2B4C', brandCyan: '#00D2FF', ink: '#0F172A', muted: '#475569' },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            } }
         }
     </script>
-    
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ComputerRepair",
+      "name": "B Informatique",
+      "url": "https://binformatique.fr/",
+      "logo": "https://binformatique.fr/logo.png",
+      "image": "https://binformatique.fr/logo.png",
+      "telephone": "+33780179579",
+      "email": "binformatique72@gmail.com",
+      "priceRange": "35€ - 140€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 rue du Point du Jour",
+        "postalCode": "72240",
+        "addressLocality": "Neuvillalais",
+        "addressRegion": "Sarthe",
+        "addressCountry": "FR"
+      },
+      "areaServed": ["Neuvillalais","Conlie","Tennie","Rouez","Sillé-le-Guillaume","Fresnay-sur-Sarthe","Ballon-Saint-Mars","Bernay-en-Champagne","Cures","Domfront-en-Champagne"],
+      "openingHoursSpecification": [
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"12:00"},
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"13:30","closes":"16:30"}
+      ]
+    }
+    </script>
+
     <style>
         html { scroll-behavior: smooth; }
         .utility-card { background: white; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .price-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 12px; border-bottom: 1px dashed #E2E8F0; }
+        .price-row:last-child { border-bottom: 0; padding-bottom: 0; }
         #result { display: none; }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid #00D2FF; outline-offset: 2px; }
     </style>
 </head>
-<body class="bg-[#F8FAFC] text-[#1A2B4C] font-sans antialiased">
+<body class="bg-[#F8FAFC] text-navy font-sans antialiased pb-20 md:pb-0">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white h-[70px] border-b-2 border-[#00D2FF] flex shadow-sm">
-        <div class="max-w-7xl w-full mx-auto px-6 md:px-10 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+    <!-- En-tête : le numéro est maintenant visible aussi sur mobile -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white h-[70px] border-b-2 border-brandCyan flex shadow-sm">
+        <div class="max-w-7xl w-full mx-auto px-4 md:px-10 flex items-center justify-between gap-3">
+            <a href="#" class="flex items-center gap-2 md:gap-3 shrink-0">
                 <img src="logo.png" alt="Logo B Informatique" class="h-10 md:h-12 w-auto object-contain">
-                <span class="font-extrabold text-xl md:text-2xl uppercase tracking-tighter">INFORMATIQUE</span>
-            </div>
-            <div class="hidden md:flex items-center gap-8 font-bold text-navy">
-                <a href="tel:0780179579" class="text-lg hover:text-[#00D2FF]">07 80 17 95 79</a>
-                <a href="#contact" class="bg-[#00D2FF] text-[#1A2B4C] px-5 py-2.5 rounded-md text-sm hover:brightness-105 active:scale-95 transition-all">Prendre RDV</a>
+                <span class="font-extrabold text-lg md:text-2xl uppercase tracking-tighter">INFORMATIQUE</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-muted">
+                <a href="#services" class="hover:text-navy">Tarifs</a>
+                <a href="#zone" class="hover:text-navy">Zone</a>
+                <a href="#distance" class="hover:text-navy">À distance</a>
+                <a href="#contact" class="hover:text-navy">Contact</a>
+            </nav>
+            <div class="flex items-center gap-3 md:gap-6 font-bold">
+                <a href="tel:+33780179579" class="hidden sm:inline text-lg hover:text-brandCyan">07 80 17 95 79</a>
+                <a href="tel:+33780179579" class="sm:hidden bg-navy text-white px-3 py-2 rounded-md text-sm whitespace-nowrap" aria-label="Appeler B Informatique">📞 Appeler</a>
+                <a href="#contact" class="hidden sm:inline-block bg-brandCyan text-navy px-4 md:px-5 py-2.5 rounded-md text-sm hover:brightness-105 active:scale-95 transition-all">Prendre RDV</a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
-        
-        <section class="utility-card bg-gradient-to-br from-[#1A2B4C] to-[#0F172A] text-white border-none flex flex-col justify-center gap-2 min-h-[300px]">
-            <span class="bg-[#00D2FF]/20 text-[#00D2FF] px-2 py-1 rounded-sm text-[11px] font-extrabold uppercase tracking-widest self-start mb-2">DÉPANNAGE À DOMICILE</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-2">Votre dépanneur de confiance à Neuvillalais.</h1>
-            <p class="text-white/90 text-lg leading-snug mb-5">L'informatique simple, chez vous. Pour les particuliers comme pour les professionnels, en Sarthe.</p>
-            <a href="#services" class="bg-[#00D2FF] text-[#1A2B4C] px-6 py-3 rounded-md font-bold text-sm self-start hover:brightness-105 transition-all text-center">Voir nos services</a>
-        </section>
+    <main class="max-w-7xl mx-auto px-4 md:px-10 pt-24 md:pt-28 pb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
 
-        <section id="services" class="utility-card md:row-span-2 flex flex-col">
-            <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-4">Services & Tarifs</h3>
-            <div class="space-y-4">
-                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
-                    <div><span class="font-bold">Diagnostic Complet</span><p class="text-xs text-[#475569]">Recherche de panne & devis</p></div>
-                    <div class="text-right"><span class="block text-[#00D2FF] font-extrabold text-xl">35€</span></div>
-                </div>
-                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
-                    <div><span class="font-bold">Main d'œuvre (1h)</span><p class="text-xs text-[#475569]">Dépannage logiciel ou matériel</p></div>
-                    <div class="text-right"><span class="block text-[#00D2FF] font-extrabold text-xl">65€</span></div>
-                </div>
-                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
-                    <div><span class="font-bold">Pack Optimisation</span><p class="text-xs text-[#475569]">Nettoyage complet PC lent</p></div>
-                    <div class="text-right"><span class="block text-[#00D2FF] font-extrabold text-xl">85€</span></div>
-                </div>
-                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
-                    <div><span class="font-bold">Réinstallation Windows</span><p class="text-xs text-[#475569]">Sauvegarde & système neuf</p></div>
-                    <div class="text-right"><span class="block text-[#00D2FF] font-extrabold text-xl">140€</span></div>
-                </div>
-                <div class="flex justify-between items-center pb-3 border-b border-dashed border-[#E2E8F0]">
-                    <div><span class="font-bold">Aide Administrative</span><p class="text-xs text-[#475569]">Formation / Démarches internet</p></div>
-                    <div class="text-right"><span class="block text-[#00D2FF] font-extrabold text-xl">60€</span></div>
-                </div>
-                <div class="flex justify-between items-center">
-                    <div><span class="font-bold">Déplacement</span><p class="text-xs text-[#475569]">Jusqu'à 15 km depuis Neuvillalais, puis 1,50€/km au-delà</p></div>
-                    <div class="text-right"><span class="block text-[#00D2FF] font-extrabold text-xl">15€</span></div>
-                </div>
+        <!-- Accroche -->
+        <section class="utility-card bg-gradient-to-br from-navy to-ink text-white border-none flex flex-col justify-center gap-2 min-h-[300px]">
+            <span class="bg-brandCyan/20 text-brandCyan px-2 py-1 rounded-sm text-[11px] font-extrabold uppercase tracking-widest self-start mb-2">Dépannage à domicile · Sarthe</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-2">Votre dépanneur informatique de confiance à Neuvillalais.</h1>
+            <p class="text-white/90 text-lg leading-snug mb-5">L'informatique simple, chez vous. Pour les particuliers comme pour les professionnels. Tarifs annoncés à l'avance, sans surprise.</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="tel:+33780179579" class="bg-brandCyan text-navy px-6 py-3 rounded-md font-bold text-sm hover:brightness-105 transition-all">📞 07 80 17 95 79</a>
+                <a href="#services" class="border border-white/40 text-white px-6 py-3 rounded-md font-bold text-sm hover:bg-white/10 transition-all">Voir les tarifs</a>
             </div>
         </section>
 
-        <section class="utility-card border-l-4 border-l-[#00D2FF]">
-            <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-3">Horaires & Disponibilités</h3>
-            <div class="flex flex-col gap-2">
-                <div class="flex justify-between items-center text-sm">
-                    <span class="font-semibold">Lundi au Vendredi</span>
-                    <span class="text-navy font-bold">08:00 – 12:00 / 13:30 – 16:30</span>
+        <!-- Tarifs -->
+        <section id="services" class="utility-card md:row-span-2 flex flex-col">
+            <h2 class="text-muted font-bold text-xs uppercase tracking-widest mb-4">Services & Tarifs à domicile</h2>
+            <div class="space-y-4">
+                <div class="price-row">
+                    <div><span class="font-bold">Diagnostic complet</span><p class="text-xs text-muted">Recherche de panne & devis — déduit si vous faites la réparation</p></div>
+                    <span class="text-brandCyan font-extrabold text-xl whitespace-nowrap">35€</span>
                 </div>
-                <div class="flex justify-between items-center text-sm text-[#475569]">
-                    <span>Week-end & Fériés</span>
-                    <span class="text-red-500 font-bold uppercase text-[10px]">Fermé</span>
+                <div class="price-row">
+                    <div><span class="font-bold">Main d'œuvre (1h)</span><p class="text-xs text-muted">Dépannage logiciel ou matériel</p></div>
+                    <span class="text-brandCyan font-extrabold text-xl whitespace-nowrap">65€</span>
+                </div>
+                <div class="price-row">
+                    <div><span class="font-bold">Pack Optimisation</span><p class="text-xs text-muted">Nettoyage complet d'un PC lent</p></div>
+                    <span class="text-brandCyan font-extrabold text-xl whitespace-nowrap">85€</span>
+                </div>
+                <div class="price-row">
+                    <div><span class="font-bold">Réinstallation Windows</span><p class="text-xs text-muted">Sauvegarde de vos données & système neuf</p></div>
+                    <span class="text-brandCyan font-extrabold text-xl whitespace-nowrap">140€</span>
+                </div>
+                <div class="price-row">
+                    <div><span class="font-bold">Aide administrative</span><p class="text-xs text-muted">Démarches internet (impôts, Ameli, CAF…), messagerie, formation</p></div>
+                    <span class="text-brandCyan font-extrabold text-xl whitespace-nowrap">60€</span>
+                </div>
+                <div class="price-row">
+                    <div><span class="font-bold">Déplacement</span><p class="text-xs text-muted">Jusqu'à 15 km depuis Neuvillalais, puis 1,50€/km au-delà</p></div>
+                    <span class="text-brandCyan font-extrabold text-xl whitespace-nowrap">15€</span>
+                </div>
+            </div>
+            <p class="text-[11px] text-muted mt-5 pt-4 border-t border-[#E2E8F0]">Prix nets — TVA non applicable, art. 293 B du CGI. Le prix total vous est annoncé au moment de la prise de rendez-vous.</p>
+        </section>
+
+        <!-- Horaires -->
+        <section class="utility-card border-l-4 border-l-brandCyan">
+            <h2 class="text-muted font-bold text-xs uppercase tracking-widest mb-3">Horaires & Disponibilités</h2>
+            <div class="flex flex-col gap-2">
+                <div class="flex justify-between items-center gap-4 text-sm">
+                    <span class="font-semibold">Lundi au vendredi</span>
+                    <span class="font-bold text-right">08:00 – 12:00 / 13:30 – 16:30</span>
+                </div>
+                <div class="flex justify-between items-center gap-4 text-sm text-muted">
+                    <span>En soirée</span>
+                    <span class="font-semibold text-right">Sur demande, jusqu'à 19:30</span>
+                </div>
+                <div class="flex justify-between items-center text-sm text-muted">
+                    <span>Week-end & jours fériés</span>
+                    <span class="text-red-600 font-bold uppercase text-[11px]">Fermé</span>
                 </div>
                 <div class="mt-3 pt-3 border-t border-[#E2E8F0]">
-                    <p class="text-navy font-bold text-sm italic flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#00D2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <p class="font-bold text-sm italic flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brandCyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         Intervention sur rendez-vous uniquement.
@@ -105,39 +156,76 @@
                 </div>
             </div>
         </section>
-        
-        <section id="distance" class="utility-card md:col-span-2 border-l-4 border-l-[#00D2FF]">
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                <div>
-                    <span class="bg-[#00D2FF]/20 text-[#00D2FF] px-2 py-1 rounded-sm text-[11px] font-extrabold uppercase tracking-widest">NOUVEAU</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-navy mt-2">Dépannage informatique à distance</h2>
-                    <p class="text-[#475569] text-sm mt-1 max-w-xl">Hors de la zone de Neuvillalais ? On intervient partout en France, par prise en main à distance sécurisée (AnyDesk / TeamViewer) ou en visio — pour les particuliers comme pour les indépendants et TPE.</p>
+
+        <!-- Pourquoi moi -->
+        <section class="utility-card md:col-span-2">
+            <h2 class="text-muted font-bold text-xs uppercase tracking-widest mb-4">Pourquoi B Informatique ?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
+                    <span class="text-2xl" aria-hidden="true">🎓</span>
+                    <span class="font-bold block mt-2">Dans l'informatique depuis 2013</span>
+                    <p class="text-xs text-muted mt-1">BTS maintenance informatique, ancien administrateur réseau (1 300 postes).</p>
                 </div>
+                <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
+                    <span class="text-2xl" aria-hidden="true">🏠</span>
+                    <span class="font-bold block mt-2">Chez vous, à votre rythme</span>
+                    <p class="text-xs text-muted mt-1">On répare et on vous explique, sans jargon. Vous n'avez rien à transporter.</p>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
+                    <span class="text-2xl" aria-hidden="true">💶</span>
+                    <span class="font-bold block mt-2">Prix annoncés à l'avance</span>
+                    <p class="text-xs text-muted mt-1">Forfaits clairs : le prix total, déplacement compris, vous est donné au téléphone.</p>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
+                    <span class="text-2xl" aria-hidden="true">📰</span>
+                    <span class="font-bold block mt-2">Un artisan local</span>
+                    <p class="text-xs text-muted mt-1">Installé à Neuvillalais, vu dans <em>Les Alpes Mancelles</em>. Déjà client de ma boutique (2016–2020) ? Rappelez-moi !</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment ça se passe -->
+        <section class="utility-card md:col-span-2 border-l-4 border-l-brandCyan">
+            <h2 class="text-muted font-bold text-xs uppercase tracking-widest mb-4">Comment ça se passe ?</h2>
+            <ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <li class="flex gap-3"><span class="shrink-0 w-8 h-8 rounded-full bg-brandCyan text-navy font-extrabold flex items-center justify-center">1</span><div><span class="font-bold block">Vous appelez ou écrivez</span><p class="text-xs text-muted">Vous m'expliquez le problème, je vous annonce le prix.</p></div></li>
+                <li class="flex gap-3"><span class="shrink-0 w-8 h-8 rounded-full bg-brandCyan text-navy font-extrabold flex items-center justify-center">2</span><div><span class="font-bold block">On fixe un rendez-vous</span><p class="text-xs text-muted">Je vous confirme l'heure et le tarif avant de venir.</p></div></li>
+                <li class="flex gap-3"><span class="shrink-0 w-8 h-8 rounded-full bg-brandCyan text-navy font-extrabold flex items-center justify-center">3</span><div><span class="font-bold block">J'interviens chez vous</span><p class="text-xs text-muted">Réparation, explications, et facture remise après l'intervention.</p></div></li>
+            </ol>
+        </section>
+
+        <!-- À distance -->
+        <section id="distance" class="utility-card md:col-span-2 border-l-4 border-l-brandCyan">
+            <div class="mb-6">
+                <span class="bg-brandCyan/20 text-[#0284A8] px-2 py-1 rounded-sm text-[11px] font-extrabold uppercase tracking-widest">Partout en France</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Dépannage informatique à distance</h2>
+                <p class="text-muted text-sm mt-1 max-w-xl">Hors de la zone de Neuvillalais ? J'interviens partout en France, par prise en main à distance sécurisée (AnyDesk / TeamViewer) ou en visio — pour les particuliers comme pour les indépendants et TPE.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
                     <span class="font-bold block mb-1">Dépannage express</span>
-                    <p class="text-xs text-[#475569] mb-3">Virus, lenteur, configuration, sauvegarde</p>
-                    <span class="block text-[#00D2FF] font-extrabold text-lg">45€ – 90€</span>
+                    <p class="text-xs text-muted mb-3">Virus, lenteur, configuration, sauvegarde</p>
+                    <span class="block text-brandCyan font-extrabold text-lg">45€ – 90€</span>
                 </div>
                 <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
                     <span class="font-bold block mb-1">Contrat de maintenance</span>
-                    <p class="text-xs text-[#475569] mb-3">Indépendants & TPE, assistance mensuelle</p>
-                    <span class="block text-[#00D2FF] font-extrabold text-lg">Dès 89€/mois</span>
+                    <p class="text-xs text-muted mb-3">Indépendants & TPE : mises à jour, antivirus et sauvegardes surveillés chaque mois + assistance à distance. Formule 3 postes avec visite sur site chaque trimestre : 129€/mois.</p>
+                    <span class="block text-brandCyan font-extrabold text-lg">Dès 49€/mois</span>
                 </div>
                 <div class="bg-slate-50 rounded-lg p-4 border border-slate-100">
                     <span class="font-bold block mb-1">Coaching en visio</span>
-                    <p class="text-xs text-[#475569] mb-3">Prise en main, formation, 45-60 min</p>
-                    <span class="block text-[#00D2FF] font-extrabold text-lg">40€ – 60€</span>
+                    <p class="text-xs text-muted mb-3">Prise en main, formation, 45-60 min</p>
+                    <span class="block text-brandCyan font-extrabold text-lg">40€ – 60€</span>
                 </div>
             </div>
-            <a href="#contact" class="inline-block mt-6 bg-[#00D2FF] text-[#1A2B4C] px-6 py-3 rounded-md font-bold text-sm hover:brightness-105 active:scale-95 transition-all shadow-sm">Demander une intervention à distance →</a>
+            <a href="#contact" class="inline-block mt-6 bg-brandCyan text-navy px-6 py-3 rounded-md font-bold text-sm hover:brightness-105 active:scale-95 transition-all shadow-sm">Demander une intervention à distance →</a>
         </section>
-        
+
+        <!-- Contact -->
         <section id="contact" class="utility-card flex flex-col md:flex-row gap-6 md:col-span-2">
             <div class="flex-1">
-                <h3 class="text-[#475569] font-bold text-xs uppercase tracking-widest mb-4">Demander un dépannage</h3>
-                
+                <h2 class="text-muted font-bold text-xs uppercase tracking-widest mb-4">Demander un dépannage</h2>
+
                 <form id="form" class="space-y-4">
                     <input type="hidden" name="access_key" value="4a264f4e-a950-4ca8-ad27-2419906161bb">
                     <input type="hidden" name="subject" value="Nouvelle demande client - B Informatique">
@@ -145,45 +233,81 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="space-y-1">
-                            <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Nom Complet</label>
-                            <input type="text" name="name" required placeholder="Ex: Jean Dupont" class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-[#00D2FF] outline-none">
+                            <label for="f-name" class="text-[11px] font-extrabold uppercase">Nom complet</label>
+                            <input id="f-name" type="text" name="name" required autocomplete="name" placeholder="Ex : Jean Dupont" class="w-full border border-[#CBD5E1] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-brandCyan outline-none">
                         </div>
                         <div class="space-y-1">
-                            <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Téléphone</label>
-                            <input type="tel" name="phone" required placeholder="07 80 17 95 79" class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-[#00D2FF] outline-none">
+                            <label for="f-phone" class="text-[11px] font-extrabold uppercase">Téléphone</label>
+                            <input id="f-phone" type="tel" name="phone" required autocomplete="tel" placeholder="Ex : 06 12 34 56 78" class="w-full border border-[#CBD5E1] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-brandCyan outline-none">
                         </div>
                     </div>
-                    
-                    <div class="space-y-1">
-                        <label class="text-[10px] font-extrabold uppercase text-[#1A2B4C]">Votre problème / besoin</label>
-                        <textarea name="message" rows="3" required placeholder="Ex: Mon PC est très lent au démarrage..." class="w-full border border-[#E2E8F0] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-[#00D2FF] outline-none"></textarea>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label for="f-city" class="text-[11px] font-extrabold uppercase">Votre commune</label>
+                            <input id="f-city" type="text" name="commune" autocomplete="address-level2" placeholder="Ex : Conlie" class="w-full border border-[#CBD5E1] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-brandCyan outline-none">
+                        </div>
+                        <div class="space-y-1">
+                            <label for="f-type" class="text-[11px] font-extrabold uppercase">Type d'intervention</label>
+                            <select id="f-type" name="type" class="w-full border border-[#CBD5E1] rounded px-3 py-2 text-sm bg-white focus:ring-1 focus:ring-brandCyan outline-none">
+                                <option>À domicile</option>
+                                <option>À distance</option>
+                                <option>Je ne sais pas</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <button type="submit" id="btn-submit" class="w-full bg-[#00D2FF] text-[#1A2B4C] font-bold py-3 rounded-md text-sm hover:brightness-105 transition-all">
+                    <div class="space-y-1">
+                        <label for="f-msg" class="text-[11px] font-extrabold uppercase">Votre problème / besoin</label>
+                        <textarea id="f-msg" name="message" rows="3" required placeholder="Ex : Mon PC est très lent au démarrage..." class="w-full border border-[#CBD5E1] rounded px-3 py-2 text-sm focus:ring-1 focus:ring-brandCyan outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" id="btn-submit" class="w-full bg-brandCyan text-navy font-bold py-3 rounded-md text-sm hover:brightness-105 transition-all">
                         Envoyer ma demande
                     </button>
-                    
-                    <div id="result" class="text-center p-3 rounded text-sm font-bold mt-2"></div>
+                    <p class="text-[11px] text-muted">Vos coordonnées servent uniquement à vous recontacter pour cette demande. Elles ne sont ni revendues ni utilisées pour de la publicité.</p>
+
+                    <div id="result" class="text-center p-3 rounded text-sm font-bold mt-2" role="status" aria-live="polite"></div>
                 </form>
             </div>
 
-            <div class="flex-1 md:border-l md:pl-6 border-[#E2E8F0]">
-                <h4 class="font-bold text-sm text-[#1A2B4C] uppercase mb-2 text-[10px]">Zone d'intervention</h4>
-                <p class="text-xs text-[#475569] leading-relaxed italic">Neuvillalais (72240) et communes voisines (Conlie, Tennie, Sillé...).</p>
-                <div class="mt-8 p-4 bg-blue-50/50 rounded-lg border border-dashed border-blue-200">
-                    <p class="text-[11px] text-navy font-medium leading-snug">
-                        Une réponse vous sera apportée par téléphone dans les plus brefs délais pour convenir d'un rendez-vous.
+            <div id="zone" class="flex-1 md:border-l md:pl-6 border-[#E2E8F0]">
+                <h3 class="font-bold uppercase mb-2 text-[11px]">Zone d'intervention à domicile</h3>
+                <p class="text-sm text-muted leading-relaxed">Neuvillalais (72240) et communes voisines : Conlie, Tennie, Rouez, Bernay-en-Champagne, Cures, Domfront-en-Champagne, Sillé-le-Guillaume, Fresnay-sur-Sarthe, Ballon-Saint-Mars…</p>
+                <p class="text-xs text-muted mt-2">Plus loin ? Appelez-moi, le déplacement est calculé au kilomètre et annoncé avant le rendez-vous.</p>
+                <div class="mt-6 p-4 bg-blue-50/50 rounded-lg border border-dashed border-blue-200">
+                    <p class="text-sm font-medium leading-snug">
+                        Une réponse vous est apportée par téléphone dans les plus brefs délais pour convenir d'un rendez-vous.
                     </p>
+                    <p class="text-sm mt-3"><a href="tel:+33780179579" class="font-bold hover:text-brandCyan">📞 07 80 17 95 79</a><br><a href="mailto:binformatique72@gmail.com" class="font-bold hover:text-brandCyan">✉️ binformatique72@gmail.com</a></p>
                 </div>
             </div>
         </section>
+
+        <!-- Mentions légales -->
+        <details id="mentions" class="utility-card md:col-span-2 text-xs text-muted">
+            <summary class="font-bold uppercase tracking-widest cursor-pointer text-[11px]">Mentions légales</summary>
+            <div class="mt-3 space-y-1 leading-relaxed">
+                <p><strong>Éditeur :</strong> Bertrand Ratajczak, entrepreneur individuel — B Informatique, 1 rue du Point du Jour, 72240 Neuvillalais. SIRET 520 051 897 00046. Tél. 07 80 17 95 79 — binformatique72@gmail.com.</p>
+                <p><strong>Directeur de la publication :</strong> Bertrand Ratajczak.</p>
+                <p><strong>Hébergeur :</strong> GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+                <p><strong>Données personnelles :</strong> les informations du formulaire sont transmises par e-mail via le service Web3Forms et utilisées uniquement pour répondre à votre demande. Vous pouvez demander leur suppression à binformatique72@gmail.com.</p>
+                <p>TVA non applicable, art. 293 B du CGI.</p>
+            </div>
+        </details>
     </main>
 
-    <footer class="bg-[#1A2B4C] text-white/50 text-[10px] py-6 text-center">
-        <div class="max-w-7xl mx-auto px-10 flex flex-col items-center gap-2">
-            <span>B Informatique © 2026 — Siret : 520 051 897 00046</span>
+    <footer class="bg-navy text-white/60 text-[11px] py-6 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center gap-2">
+            <span>B Informatique © 2026 — Neuvillalais (72) — SIRET 520 051 897 00046 — <a href="#mentions" class="underline hover:text-white">Mentions légales</a></span>
         </div>
     </footer>
+
+    <!-- Barre d'appel fixe sur mobile -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#E2E8F0] p-3 flex gap-3 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+        <a href="tel:+33780179579" class="flex-1 bg-navy text-white text-center font-bold py-3 rounded-md text-sm">📞 Appeler</a>
+        <a href="#contact" class="flex-1 bg-brandCyan text-navy text-center font-bold py-3 rounded-md text-sm">Prendre RDV</a>
+    </div>
 
     <script>
         const form = document.getElementById('form');
@@ -192,9 +316,7 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
+            const json = JSON.stringify(Object.fromEntries(new FormData(form)));
 
             result.style.display = "block";
             result.innerHTML = "Envoi en cours...";
@@ -208,18 +330,19 @@
                 body: json
             })
             .then(async (response) => {
-                let json = await response.json();
+                await response.json();
                 if (response.status == 200) {
-                    result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-green-50 text-green-600 border border-green-200";
+                    result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-green-50 text-green-700 border border-green-200";
                     result.innerHTML = "✓ Message envoyé ! Je vous recontacte très bientôt.";
                     form.reset();
                 } else {
                     result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-red-50 text-red-600 border border-red-200";
-                    result.innerHTML = "Erreur lors de l'envoi. Veuillez réessayer.";
+                    result.innerHTML = "Erreur lors de l'envoi. Appelez-moi au 07 80 17 95 79.";
                 }
             })
-            .catch(error => {
-                result.innerHTML = "Une erreur est survenue.";
+            .catch(() => {
+                result.className = "text-center p-3 rounded text-sm font-bold mt-2 bg-red-50 text-red-600 border border-red-200";
+                result.innerHTML = "Une erreur est survenue. Appelez-moi au 07 80 17 95 79.";
             })
             .then(function() {
                 setTimeout(() => {
