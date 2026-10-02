@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dépannage à distance – B Informatique</title>
+<meta name="description" content="Dépannage informatique à distance avec B Informatique : téléchargez AnyDesk en un clic, donnez-moi votre numéro, je prends la main sur votre ordinateur.">
+<link rel="canonical" href="https://binformatique.fr/aide/">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<meta name="color-scheme" content="light dark">
+<script>
+(function(){var m="auto";try{m=localStorage.getItem("bi-theme")||"auto"}catch(e){}
+var d=m==="dark"||(m==="auto"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);
+document.documentElement.classList.toggle("dark",d);})();
+</script>
+<style>
+:root{--bg:#F1F5F9;--card:#fff;--ink:#0F172A;--muted:#475569;--line:#E2E8F0;--navy:#1A2B4C;--cyan:#00D2FF;--link:#0284A8;--warn-bg:#FFF7ED;--warn-line:#FDBA74;--warn-ink:#7C2D12}
+html.dark{--bg:#0B1220;--card:#111A2E;--ink:#E2E8F0;--muted:#94A3B8;--line:#2A3A5A;--navy:#1E3A66;--link:#38BDF8;--warn-bg:#2A1A0E;--warn-line:#9A3412;--warn-ink:#FED7AA}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:18px;line-height:1.5}
+header{background:var(--card);border-bottom:2px solid var(--cyan)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px;letter-spacing:-.03em}
+.brand img{height:42px;width:auto;background:#fff;border-radius:8px;padding:2px}
+.tel{color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap}
+h1{font-size:28px;line-height:1.2;margin:28px 0 6px}
+.lead{color:var(--muted);margin:0 0 22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px}
+.step{display:flex;gap:16px}
+.num{flex:0 0 40px;height:40px;border-radius:50%;background:var(--cyan);color:#1A2B4C;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.step h2{font-size:20px;margin:6px 0 6px}
+.step p{margin:0 0 8px}
+.btn{display:inline-block;background:var(--cyan);color:#1A2B4C;font-weight:800;font-size:19px;text-decoration:none;padding:16px 22px;border-radius:10px;margin:8px 0 6px}
+.btn:active{transform:scale(.98)}
+.alt{font-size:15px;color:var(--muted)}
+.alt a{color:var(--link)}
+.big{font-family:ui-monospace,Consolas,monospace;font-size:22px;font-weight:700;letter-spacing:.08em;background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:4px 10px;display:inline-block}
+.note{font-size:15px;color:var(--muted)}
+.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink)}
+.warn h2{margin:0 0 8px;font-size:19px}
+.warn ul{margin:0;padding-left:20px}
+.warn li{margin:4px 0}
+.mobile{display:none;background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink)}
+.call{text-align:center}
+.call a.btn{background:var(--navy);color:#fff}
+@media(max-width:480px){.brand span{display:none}.tel{font-size:16px}h1{font-size:24px}}
+footer{text-align:center;font-size:13px;color:var(--muted);padding:20px 16px 40px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <a class="brand" href="/"><img src="../logo.png" alt="B Informatique"> <span>INFORMATIQUE</span></a>
+  <a class="tel" href="tel:+33780179579">📞 07 80 17 95 79</a>
+</div></header>
+
+<main class="wrap">
+  <h1>Dépannage à distance : 3 étapes</h1>
+  <p class="lead">Je vais prendre la main sur votre ordinateur avec le logiciel gratuit <b>AnyDesk</b>. Vous voyez tout ce que je fais et vous pouvez arrêter à tout moment.</p>
+
+  <div class="card mobile" id="mobile">
+    <b>Vous êtes sur un téléphone ou une tablette.</b> Ouvrez cette page sur l'<b>ordinateur à dépanner</b> : tapez <b>binformatique.fr/aide</b> dans son navigateur internet.
+  </div>
+
+  <div class="card step">
+    <div class="num">1</div>
+    <div>
+      <h2>Téléchargez AnyDesk</h2>
+      <p>Cliquez sur le bouton :</p>
+      <a class="btn" id="dl" href="https://download.anydesk.com/AnyDesk.exe">⬇ Télécharger AnyDesk</a>
+      <p class="alt" id="dl-alt">Ordinateur Windows : <a href="https://download.anydesk.com/AnyDesk.exe">AnyDesk.exe</a> · Mac : <a href="https://download.anydesk.com/anydesk.dmg">anydesk.dmg</a></p>
+      <p class="note">Le fichier vient directement du site officiel d'AnyDesk. Il n'y a rien à acheter ni de compte à créer.</p>
+    </div>
+  </div>
+
+  <div class="card step">
+    <div class="num">2</div>
+    <div>
+      <h2>Ouvrez le fichier téléchargé</h2>
+      <p id="open-win"><b>Windows :</b> cliquez sur <b>AnyDesk.exe</b> en haut à droite de votre navigateur (ou dans le dossier <i>Téléchargements</i>). Si Windows demande « Voulez-vous autoriser… ? », cliquez sur <b>Oui</b>. Pas besoin d'installer : AnyDesk s'ouvre directement.</p>
+      <p id="open-mac"><b>Mac :</b> ouvrez <b>anydesk.dmg</b>, puis l'icône AnyDesk. Si le Mac demande des autorisations (« Enregistrement de l'écran », « Accessibilité »), acceptez-les : sans elles je ne vois pas votre écran.</p>
+    </div>
+  </div>
+
+  <div class="card step">
+    <div class="num">3</div>
+    <div>
+      <h2>Donnez-moi votre numéro AnyDesk</h2>
+      <p>AnyDesk affiche un numéro de 9 ou 10 chiffres, par exemple <span class="big">123 456 789</span>, sous <i>«&nbsp;Votre adresse&nbsp;»</i> ou <i>«&nbsp;Ce poste de travail&nbsp;»</i>.</p>
+      <p>Dictez-le-moi au téléphone. Une fenêtre s'ouvre ensuite sur votre écran : cliquez sur <b>Accepter</b>. C'est tout, je m'occupe du reste.</p>
+    </div>
+  </div>
+
+  <div class="card warn">
+    <h2>🔒 Votre sécurité</h2>
+    <ul>
+      <li>Ne donnez votre numéro AnyDesk <b>qu'à moi</b>, pendant un appel que <b>vous</b> avez demandé au <b>07 80 17 95 79</b>.</li>
+      <li>Je ne vous demanderai <b>jamais</b> vos codes bancaires, ni de vous connecter à votre banque pendant la séance.</li>
+      <li>Pour couper la connexion à tout moment, il suffit de fermer AnyDesk.</li>
+      <li>Si quelqu'un vous appelle sans que vous l'ayez demandé pour « réparer votre ordinateur » : raccrochez, c'est une arnaque.</li>
+    </ul>
+  </div>
+
+  <div class="card call">
+    <p style="margin:0 0 4px">Un souci pour suivre ces étapes ?</p>
+    <a class="btn" href="tel:+33780179579">📞 Appelez-moi : 07 80 17 95 79</a>
+    <p class="note" style="margin:6px 0 0">Bertrand – B Informatique, Neuvillalais (72)</p>
+  </div>
+</main>
+
+<footer>B Informatique — 1 rue du Point du Jour, 72240 Neuvillalais — SIRET 520 051 897 00046 — <a href="/">binformatique.fr</a><br>AnyDesk est une marque d'AnyDesk Software GmbH. B Informatique n'est pas affilié à AnyDesk.</footer>
+
+<script>
+(function(){
+  var ua=navigator.userAgent||"",p=(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||"";
+  var touchMac=/Mac/.test(p)&&navigator.maxTouchPoints>1;
+  var mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(ua)||touchMac;
+  var mac=!mobile&&/Mac/i.test(p+ua);
+  var dl=document.getElementById("dl");
+  if(mobile){document.getElementById("mobile").style.display="block";}
+  else if(mac){dl.href="https://download.anydesk.com/anydesk.dmg";dl.textContent="⬇ Télécharger AnyDesk pour Mac";document.getElementById("open-win").style.display="none";}
+  else{dl.textContent="⬇ Télécharger AnyDesk pour Windows";document.getElementById("open-mac").style.display="none";}
+})();
+</script>
+</body>
+</html>
